@@ -3,7 +3,6 @@ from skimage.morphology import binary_closing, binary_dilation, binary_opening, 
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 def find_wire(img):
     count = 0
     for y in range(img.shape[0]):
@@ -11,8 +10,7 @@ def find_wire(img):
             count+=1
     return count
 
-
-def parts(img,num_of_wires):
+def parts(img):
     count = 1
     for y in range(img.shape[0]):
         if img[y].all() == 1:
@@ -20,14 +18,13 @@ def parts(img,num_of_wires):
             count += 1
         elif img[y].any() == 1:
             print(f"{count} провод состоит {max(label(img[y]))} частей")
-            count += 1
-        
+            count += 1     
 
 
 for i in range(1,7):
     im = np.load(f"wires/wires{i}npy.txt")
     print(f"Изображение номер {i} содержит {find_wire(im)} проводов")
-    parts(binary_erosion(im), find_wire(im))
+    parts(binary_erosion(im))
     # plt.subplot(121)
     # plt.imshow(im)
     # plt.subplot(122)
