@@ -25,6 +25,8 @@ for i in range(1,7):
     im = np.load(f"wires/wires{i}npy.txt")
     print(f"Изображение номер {i} содержит {find_wire(im)} проводов")
     parts(binary_erosion(im))
+
+    
     # plt.subplot(121)
     # plt.imshow(im)
     # plt.subplot(122)
