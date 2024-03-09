@@ -2,9 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import socket
 
-host='84.237.21.36'    
-port=5152
-
 def recwall(sock,n):
     data=bytearray()
     while (len(data)<n):
@@ -37,6 +34,10 @@ def serch(arr):
                 l.append((y,x))
     return(l)
 
+
+host='84.237.21.36'    
+port=5152
+
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     sock.connect((host,port))
     for _ in range(10):
@@ -56,6 +57,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         beat=sock.recv(20)
         print(beat)
         print()
-# plt.subplot(121)
-# plt.imshow(img)
-# plt.show()
+
+
+        # plt.subplot(121)
+        # plt.imshow(img)
+        # plt.show()

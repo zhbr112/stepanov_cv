@@ -16,7 +16,6 @@ d = np.array([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4])
 
 assert np.all(d == np.array([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]))
 
-# e = np.arange(0, 1.25, 0.25)
 e = np.linspace(0, 1, 5)
 
 assert np.all(e == np.array([0.0, 0.25, 0.5, 0.75, 1.0]))

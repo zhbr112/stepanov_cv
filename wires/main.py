@@ -1,5 +1,5 @@
 from skimage.measure import label
-from skimage.morphology import binary_closing, binary_dilation, binary_opening, binary_erosion
+from skimage.morphology import binary_erosion
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -26,10 +26,9 @@ for i in range(1,7):
     print(f"Изображение номер {i} содержит {find_wire(im)} проводов")
     parts(binary_erosion(im))
 
-    
+
     # plt.subplot(121)
     # plt.imshow(im)
     # plt.subplot(122)
     # plt.imshow(binary_erosion(im))
     # plt.show()
-    

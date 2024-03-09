@@ -18,6 +18,7 @@ for i, v1 in enumerate(np.linspace(0, 1, image.shape[0])):
         b = lerp(color1[2], color2[2], (v1+v2)/2)
         image[i, j, :] = [r, g, b]
 
+
 plt.figure(1)
 plt.imshow(image)
 plt.show()
